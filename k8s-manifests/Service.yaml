@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  type: ClusterIP  # Gunakan ClusterIP untuk Port Forwarding agar lebih cepat
+  selector:
+    app: my-flask-app # COCOK dengan label Deployment Anda
+  ports:
+    - port: 5000       # Port yang diekspos oleh Service (digunakan oleh Port Forwarding)
+      targetPort: 5000 # COCOK dengan containerPort di Deployment Anda
+      protocol: TCP

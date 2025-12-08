@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-flask-app  # Nama Deployment
+  labels:
+    app: my-flask-app
+spec:
+  replicas: 1 # Jumlah Pod yang ingin dijalankan
+  selector:
+    matchLabels:
+      app: my-flask-app
+  template:
+    metadata:
+      labels:
+        app: my-flask-app # Label ini harus cocok dengan selector di atas
+    spec:
+      containers:
+      - name: my-app-app-container
+        image: public.ecr.aws/y6k6r7z7/cloud_monitoring:latest # Ganti dengan path image Docker Anda
+        ports:
+        - containerPort: 5000
