@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: my-app-service
 spec:
-  type: ClusterIP  # Gunakan ClusterIP untuk Port Forwarding agar lebih cepat
+  type: LoadBalancer  # Gunakan ClusterIP untuk Port Forwarding agar lebih cepat
   selector:
     app: my-flask-app # COCOK dengan label Deployment Anda
   ports:

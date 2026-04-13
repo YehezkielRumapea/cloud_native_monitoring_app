@@ -10,7 +10,7 @@ def index():
     message = None
     if cpu_percent > 80 or mem_percent > 80:
         message = "High resource percent detected!"
-    return render_template("indes.html", cpu_percent=cpu_percent, mem_percent=mem_percent, message=message)
+    return render_template("index.html", cpu_percent=cpu_percent, mem_percent=mem_percent, message=message)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
